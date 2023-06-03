@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "427577979545",
+    "project_id": "deudorz",
+    "storage_bucket": "deudorz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427577979545:android:37f5ef7e789f69983c7e08",
+        "android_client_info": {
+          "package_name": "com.jpdev.deudoors"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIK7zswV2xsn88MqE6lirJQ9Z76I1Xdyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
