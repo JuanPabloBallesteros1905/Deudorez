@@ -1,7 +1,8 @@
-import 'package:deudoors/provider/database_provider.dart';
-import 'package:deudoors/widgets/widgets.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:deudoors/widgets/widgets.dart';
+import 'package:deudoors/provider/database_provider.dart';
 
 class GenteDebe extends StatelessWidget {
   const GenteDebe({Key? key}) : super(key: key);
@@ -11,14 +12,15 @@ class GenteDebe extends StatelessWidget {
     final databaseProvider = Provider.of<DatabaseProvider>(context);
 
     return Scaffold(
-        body: Stack(
-      children: [
-        Background(),
-        _DeuBody(
-          data: databaseProvider.deuData,
-        )
-      ],
-    ));
+      body: Stack(
+        children: [
+          Background(),
+          _DeuBody(
+            data: databaseProvider.deuData,
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -28,7 +30,7 @@ class _DeuBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return data.length == 0? Empty() : ListView.builder(
       itemCount: data.length,
       itemBuilder: (BuildContext context, int index) {
         final data2 = data[index];
@@ -46,6 +48,7 @@ class _DeuBody extends StatelessWidget {
                     ),
                     subtitle: Text('${data2['phone']}'),
                     trailing: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text('Deuda'),
                         const SizedBox(height: 10),
@@ -81,3 +84,5 @@ class _DeuBody extends StatelessWidget {
     );
   }
 }
+
+
