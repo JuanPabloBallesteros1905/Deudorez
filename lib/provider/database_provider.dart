@@ -10,7 +10,8 @@ class DatabaseProvider extends ChangeNotifier {
 
   List deuData = [];
 
-  getData() async {
+  //*Metodo para llamar datos de clientes
+  Future<void> getData() async {
     CollectionReference collectionReference = db.collection('deudores');
 
     QuerySnapshot querySnapshot = await collectionReference.get();
@@ -25,5 +26,15 @@ class DatabaseProvider extends ChangeNotifier {
       };
       deuData.add(deu);
     }
+    notifyListeners();
   }
+
+  Future<void> addClients(String name, String phone, String deuda) async {
+  await db.collection('deudores').add({"name": name, "phone": phone, "price": deuda});
+  notifyListeners();
+
+
 }
+}
+
+

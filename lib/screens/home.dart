@@ -92,8 +92,8 @@ class _SingleTable extends StatelessWidget {
                 child: const Text('Ver Todo'),
               ),
               TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, routeAdd);
+                onPressed: ()async {
+                  await Navigator.pushNamed(context, routeAdd);
                 },
                 child: const Text('Agregar'),
               ),

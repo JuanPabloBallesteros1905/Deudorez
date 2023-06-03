@@ -47,13 +47,31 @@ class _DeuBody extends StatelessWidget {
                     subtitle: Text('${data2['phone']}'),
                     trailing: Column(
                       children: [
-                        Text('Deuda'),
-                        SizedBox(height: 10),
+                        const Text('Deuda'),
+                        const SizedBox(height: 10),
                         Text('${data2['price']}'),
                       ],
                     ),
                   ),
-                  TextButton(onPressed: (){}, child: const Text('Modificar', style: TextStyle(color: Colors.black),))
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Add Pago/Abono',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Borrar',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
