@@ -23,8 +23,8 @@ class _BodyForm extends StatelessWidget {
   String product = '';
   String cantidad = '';
   String place = '';
-  String price = '';
-  String priceSal = '';
+  String priceCompra = '';
+  String priceVenta = '';
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +56,9 @@ class _BodyForm extends StatelessWidget {
             product = _productController.text;
             cantidad = _cantidadController.text;
             place = _placeController.text;
-            price = _priceController.text;
-            priceSal = _priceSaleController.text;
+            priceCompra = _priceController.text;
+            priceVenta = _priceSaleController.text;
+
           },
           child: const Text(
             'Guardar',

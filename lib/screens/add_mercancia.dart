@@ -1,5 +1,6 @@
+import 'package:deudoors/provider/database_provider.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 import '../widgets/widgets.dart';
 
 class AddMercancia extends StatelessWidget {
@@ -25,6 +26,8 @@ class _BodyForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<DatabaseProvider>(context);
+
     return Column(
       children: [
         const SizedBox(height: 70),
@@ -46,7 +49,9 @@ class _BodyForm extends StatelessWidget {
               cantidad = _cantidadController.text;
               price = _priceController.text;
 
-           
+              provider
+                  .addItems(product, cantidad, price)
+                  .then((value) => Navigator.pop(context));
             },
             child: const Text('Guardar', style: TextStyle(color: Colors.white)))
       ],

@@ -13,6 +13,8 @@ class DatabaseProvider extends ChangeNotifier {
 
   List md = [];
 
+  List cm = [];
+
   //*Metodo para llamar datos de clientes
   Future<void> getData() async {
     CollectionReference collectionReference = db.collection('deudores');
@@ -29,9 +31,15 @@ class DatabaseProvider extends ChangeNotifier {
       };
       deuData.add(deu);
     }
+
+    db.collection('deudores').snapshots().listen((event) {
+      querySnapshot.docs;
+    });
+
     notifyListeners();
   }
 
+  //*Metodo para añadir clientes
   Future<void> addClients(String name, String phone, String deuda) async {
     await db
         .collection('deudores')
@@ -39,6 +47,7 @@ class DatabaseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  //*Metodo para llamar a la mercancia disponible
   Future<List> getMd() async {
     CollectionReference collectionReference = db.collection('md');
 
@@ -55,5 +64,38 @@ class DatabaseProvider extends ChangeNotifier {
     }
     notifyListeners();
     return md;
+  }
+
+  Future<void> addItems(String product, String cantidad, String price) async {
+    await db
+        .collection('md')
+        .add({"product": product, "amount": cantidad, "price": price});
+  }
+
+  //*Compra de mercancias
+  Future<List> getCm() async {
+    CollectionReference collectionReference = db.collection('cm');
+
+    QuerySnapshot querySnapshot = await collectionReference.get();
+    for (var element in querySnapshot.docs) {
+      final Map<String, dynamic> data = element.data() as Map<String, dynamic>;
+      final cM = {
+        "id": element.id,
+        "amount": data['amount'],
+        "price": data['price'],
+        "product": data['product'],
+        "purchase price": data['purchase price'],
+        "place": data['place']
+      };
+      cm.add(cM);
+    }
+    notifyListeners();
+
+    return cm;
+  }
+
+  Future<void> addcm(String product, String cantidad, String place,
+      String priceCompra, String priceVenta) async {
+    await db.collection('cm').add({});
   }
 }

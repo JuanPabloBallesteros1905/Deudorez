@@ -86,13 +86,13 @@ class _SingleTable extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, route);
+                onPressed: () async {
+                  await Navigator.pushNamed(context, route);
                 },
                 child: const Text('Ver Todo'),
               ),
               TextButton(
-                onPressed: ()async {
+                onPressed: () async {
                   await Navigator.pushNamed(context, routeAdd);
                 },
                 child: const Text('Agregar'),
