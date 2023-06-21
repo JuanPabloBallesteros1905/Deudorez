@@ -5,6 +5,7 @@ class DatabaseProvider extends ChangeNotifier {
   DatabaseProvider() {
     getData();
     getMd();
+    getCm();
   }
 
   FirebaseFirestore db = FirebaseFirestore.instance;
@@ -94,8 +95,15 @@ class DatabaseProvider extends ChangeNotifier {
     return cm;
   }
 
-  Future<void> addcm(String product, String cantidad, String place,
-      String priceCompra, String priceVenta) async {
-    await db.collection('cm').add({});
+  Future<void> addcm(String product, String cantidad, String place, String priceCompra, String priceVenta) async {
+    await db.collection('cm').add({
+      "amount": cantidad,
+      "product": product,
+      "place": place,
+      "purchase price": priceCompra,
+      "price": priceVenta
+
+
+    });
   }
 }
