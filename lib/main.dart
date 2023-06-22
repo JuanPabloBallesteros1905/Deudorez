@@ -1,4 +1,5 @@
 import 'package:deudoors/provider/database_provider.dart';
+import 'package:deudoors/screens/edit_pago.dart';
 import 'package:deudoors/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,9 +38,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
+      theme: ThemeData.light(
+        useMaterial3: true
+      ),
       debugShowCheckedModeBanner: false,
-      theme: Themes.themes,
+    
       initialRoute: 'home',
       routes: {
         'home': (_) => const HomeScreen(),
@@ -48,7 +51,8 @@ class MyApp extends StatelessWidget {
         'compraMercancia': (_) => const CompraMercancia(),
         'addDeuda': (_) => AddGente(),
         'addMercancia': (_) => const AddMercancia(),
-        'addCompraMercancia': (_) => const AddCompraMercancias()
+        'addCompraMercancia': (_) => const AddCompraMercancias(),
+        'editPago': (context) => const EditPago()
       },
     );
   }

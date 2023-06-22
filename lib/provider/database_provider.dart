@@ -48,6 +48,14 @@ class DatabaseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  //*Metodo para actualizar pagos de clientes
+  Future<void> updatepago(String uid, String newData, String phone, String name) async {
+    await db.collection('deudores').doc(uid).set({
+      "name": name,
+      "phone": phone,
+      "price": newData});
+  }
+
   //*Metodo para llamar a la mercancia disponible
   Future<List> getMd() async {
     CollectionReference collectionReference = db.collection('md');
@@ -95,15 +103,14 @@ class DatabaseProvider extends ChangeNotifier {
     return cm;
   }
 
-  Future<void> addcm(String product, String cantidad, String place, String priceCompra, String priceVenta) async {
+  Future<void> addcm(String product, String cantidad, String place,
+      String priceCompra, String priceVenta) async {
     await db.collection('cm').add({
       "amount": cantidad,
       "product": product,
       "place": place,
       "purchase price": priceCompra,
       "price": priceVenta
-
-
     });
   }
 }
