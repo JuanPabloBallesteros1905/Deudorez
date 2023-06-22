@@ -61,14 +61,17 @@ class _DeuBody extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             TextButton(
-                              onPressed: () async {
-                                await Navigator.pushNamed(context, 'editPago',
-                                    arguments: {
-                                      "id": data2['id'],
-                                      "price": data2['price'],
-                                      "name": data2['name'],
-                                      "phone": data2['phone']
-                                    });
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  'editPago',
+                                  arguments: {
+                                    "id": data2['id'],
+                                    "name": data2['name'],
+                                    "phone": data2['phone'],
+                                    "price": data2['price']
+                                  },
+                                );
                               },
                               child: const Text(
                                 'Add Pago/Abono',

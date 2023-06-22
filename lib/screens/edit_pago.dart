@@ -34,10 +34,13 @@ class _Body extends StatelessWidget {
           child: CustomForm(label1: 'Pago/Abono', textController: text),
         ),
         OutlinedButton(
-          onPressed: () async {
-            await provider
-                .updatepago(arguments['id'], arguments['phone'], arguments['name'], text.text)
-                .then((value) => Navigator.pop(context));
+          onPressed: () {
+            provider
+                .updatepago(arguments['id'],
+                    arguments['name'], arguments['phone'], text.text)
+                .then(
+                  (value) => Navigator.pop(context),
+                );
           },
           child: const Text('Guardar'),
         )
