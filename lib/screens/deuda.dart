@@ -61,30 +61,33 @@ class _DeuBody extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             TextButton(
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  'editPago',
-                                  arguments: {
-                                    "id": data2['id'],
-                                    "name": data2['name'],
-                                    "phone": data2['phone'],
-                                    "price": data2['price']
-                                  },
-                                );
-                              },
-                              child: const Text(
-                                'Add Pago/Abono',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    'editPago',
+                                    arguments: {
+                                      "id": data2['id'],
+                                      "name": data2['name'],
+                                      "phone": data2['phone'],
+                                      "price": data2['price']
+                                    },
+                                  );
+                                },
+                                child: const Icon(Icons.add)),
                             TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                'Borrar',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
+                                onPressed: () {},
+                                child: const Icon(Icons.delete)),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'editDataDeuda',
+                                      arguments: {
+                                        "id": data2['id'],
+                                        "name": data2['name'],
+                                        "phone": data2['phone'],
+                                        "price": data2['price']
+                                      });
+                                },
+                                child: const Icon(Icons.mode_edit))
                           ],
                         ),
                       ],

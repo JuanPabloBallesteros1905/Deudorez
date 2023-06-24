@@ -1,8 +1,8 @@
-import 'package:deudoors/provider/database_provider.dart';
-import 'package:deudoors/widgets/backg.dart';
-import 'package:deudoors/widgets/custom_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:deudoors/widgets/backg.dart';
+import 'package:deudoors/widgets/custom_form.dart';
+import 'package:deudoors/provider/database_provider.dart';
 
 class EditPago extends StatelessWidget {
   const EditPago({Key? key}) : super(key: key);
@@ -36,8 +36,8 @@ class _Body extends StatelessWidget {
         OutlinedButton(
           onPressed: () {
             provider
-                .updatepago(arguments['id'],
-                    arguments['name'], arguments['phone'], text.text)
+                .updatepago(arguments['id'], arguments['name'],
+                    arguments['phone'], text.text)
                 .then(
                   (value) => Navigator.pop(context),
                 );

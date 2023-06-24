@@ -1,3 +1,5 @@
+export 'package:deudoors/screens/edit_data_deuda.dart';
+export 'package:deudoors/screens/edit_pago.dart';
 export 'package:deudoors/screens/add_compra_mercancia.dart';
 export 'package:deudoors/screens/add_gente.dart';
 export 'package:deudoors/screens/add_mercancia.dart';

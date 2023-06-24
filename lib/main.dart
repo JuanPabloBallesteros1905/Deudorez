@@ -1,6 +1,6 @@
 import 'package:deudoors/provider/database_provider.dart';
-import 'package:deudoors/screens/edit_pago.dart';
-import 'package:deudoors/themes/themes.dart';
+ 
+ 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/screens.dart';
@@ -52,7 +52,8 @@ class MyApp extends StatelessWidget {
         'addDeuda': (_) => AddGente(),
         'addMercancia': (_) => const AddMercancia(),
         'addCompraMercancia': (_) => const AddCompraMercancias(),
-        'editPago': (context) => const EditPago()
+        'editPago': (context) => const EditPago(),
+        'editDataDeuda':(context) => const EditDataDueda()
       },
     );
   }
