@@ -29,7 +29,7 @@ class MercanciaBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return mD.length == 0
+    return mD.isEmpty
         ? const Empty()
         : SafeArea(
             child: ListView.builder(
@@ -37,22 +37,41 @@ class MercanciaBody extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 final mdd = mD[index];
                 return Card(
-                  child: ListTile(
-                    title: Text('${mdd['product']}'),
-                    subtitle: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Cantidad disponible:'),
-                        Text('${mdd['amount']}'),
-                      ],
-                    ),
-                    trailing: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('Valor venta'),
-                        Text('${mdd['price']}'),
-                      ],
-                    ),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Text('${mdd['product']}'),
+                        subtitle: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Cantidad disponible:'),
+                            Text('${mdd['amount']}'),
+                          ],
+                        ),
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('Valor venta'),
+                            Text('${mdd['price']}'),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.edit,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
                 );
               },

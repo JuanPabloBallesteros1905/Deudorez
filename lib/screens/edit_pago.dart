@@ -4,8 +4,8 @@ import 'package:deudoors/widgets/backg.dart';
 import 'package:deudoors/widgets/custom_form.dart';
 import 'package:deudoors/provider/database_provider.dart';
 
-class EditPago extends StatelessWidget {
-  const EditPago({Key? key}) : super(key: key);
+class AddPago extends StatelessWidget {
+  const AddPago({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,16 @@ class _Body extends StatelessWidget {
 
     final text = TextEditingController();
 
-    text.text = arguments['price'];
+    String pago() {
+      final deuda = double.parse(arguments['price']);
+      final pago = double.parse(text.text);
+
+      final total = deuda - pago;
+
+      String dato = "$total";
+
+      return dato;
+    }
 
     return Column(
       children: [
@@ -37,13 +46,18 @@ class _Body extends StatelessWidget {
           onPressed: () {
             provider
                 .updatepago(arguments['id'], arguments['name'],
-                    arguments['phone'], text.text)
+                    arguments['phone'], pago())
                 .then(
                   (value) => Navigator.pop(context),
                 );
           },
           child: const Text('Guardar'),
-        )
+        ),
+        TextButton(
+            onPressed: () {
+              pago();
+            },
+            child: Text('Pruebas'))
       ],
     );
   }

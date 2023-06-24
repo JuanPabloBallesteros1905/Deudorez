@@ -15,10 +15,6 @@ class DatabaseProvider extends ChangeNotifier {
   List md = [];
 
   List cm = [];
-  
-
-  
-
 
   //*Metodo para llamar datos de clientes
   Future<List> getData() async {
@@ -37,7 +33,6 @@ class DatabaseProvider extends ChangeNotifier {
       deuData.add(deu);
     }
 
-  
     notifyListeners();
 
     return deuData;
@@ -52,18 +47,25 @@ class DatabaseProvider extends ChangeNotifier {
   }
 
   //*Metodo para actualizar pagos de clientes
-  Future<void> updatepago(String id, String name, String phone, String newData  ) async {
+  Future<void> updatepago(
+      String id, String name, String phone, String newData) async {
     await db.collection('deudores').doc(id).set({
       "name": name,
       "phone": phone,
       "price": newData,
-      
-      });
+    });
+    notifyListeners();
+  }
 
-      print(' nombre: ${name}');
-      print(' phone: ${phone}');
-      print(' precio: ${newData}');
-      
+  //*Metodo para modificar informacion del cliete
+  Future<void> changeUserData(
+      String id, String name, String phone, String price) async {
+    await db
+        .collection('deudores')
+        .doc(id)
+        .set({"name": name, "phone": phone, "price": price});
+
+    notifyListeners();
   }
 
   //*Metodo para llamar a la mercancia disponible

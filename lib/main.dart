@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         'addDeuda': (_) => AddGente(),
         'addMercancia': (_) => const AddMercancia(),
         'addCompraMercancia': (_) => const AddCompraMercancias(),
-        'editPago': (context) => const EditPago(),
+        'editPago': (context) => const AddPago(),
         'editDataDeuda':(context) => const EditDataDueda()
       },
     );

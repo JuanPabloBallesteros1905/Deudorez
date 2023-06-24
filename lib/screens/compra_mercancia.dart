@@ -59,7 +59,17 @@ class _CompraBody extends StatelessWidget {
                   ],
                 ),
               ),
-              TextButton(onPressed: () {}, child: Text('Editar producto'))
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Editar producto'),
+                  ),
+                  IconButton(onPressed: (){}, icon: const Icon(Icons.edit))
+                ],
+              ),
+              
             ],
           ),
         );
