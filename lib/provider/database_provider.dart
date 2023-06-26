@@ -68,6 +68,13 @@ class DatabaseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+
+  //*Metodo para eliminar clientes
+
+  Future<void> deleteClientes (String id) async{
+    await db.collection('deudores').doc(id).delete();
+  }
+
   //*Metodo para llamar a la mercancia disponible
   Future<List> getMd() async {
     CollectionReference collectionReference = db.collection('md');

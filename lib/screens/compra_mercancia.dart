@@ -37,9 +37,15 @@ class _CompraBody extends StatelessWidget {
           child: Column(
             children: [
               ListTile(
-                title: Text(
-                  '${data2['product']}',
-                  style: const TextStyle(fontSize: 20),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${data2['product']}',
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                    Text( '( ${data2['place']} )' )
+                  ],
                 ),
                 subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

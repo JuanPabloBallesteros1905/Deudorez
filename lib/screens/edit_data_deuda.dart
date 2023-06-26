@@ -1,8 +1,8 @@
-import 'package:deudoors/provider/database_provider.dart';
-import 'package:deudoors/widgets/backg.dart';
-import 'package:deudoors/widgets/custom_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:deudoors/widgets/backg.dart';
+import 'package:deudoors/widgets/custom_form.dart';
+import 'package:deudoors/provider/database_provider.dart';
 
 class EditDataDueda extends StatelessWidget {
   const EditDataDueda({Key? key}) : super(key: key);
@@ -41,7 +41,8 @@ class BodyEdit extends StatelessWidget {
           OutlinedButton(
               onPressed: () {
                 provider
-                    .changeUserData(arguments['id'], name.text, phone.text, price.text )
+                    .changeUserData(
+                        arguments['id'], name.text, phone.text, price.text)
                     .then((value) => Navigator.pop(context));
               },
               child: const Text('Guardar'))

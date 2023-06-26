@@ -25,15 +25,16 @@ class _Body extends StatelessWidget {
 
     final text = TextEditingController();
 
+    //* TODO: mejorar la funcion de pagos
     String pago() {
       final deuda = double.parse(arguments['price']);
       final pago = double.parse(text.text);
 
-      final total = deuda - pago;
+      final result = deuda - pago;
 
-      String dato = "$total";
-
-      return dato;
+      final data = result.toStringAsFixed(3); 
+   
+      return data;
     }
 
     return Column(
@@ -57,7 +58,7 @@ class _Body extends StatelessWidget {
             onPressed: () {
               pago();
             },
-            child: Text('Pruebas'))
+            child: const Text('Pruebas'))
       ],
     );
   }

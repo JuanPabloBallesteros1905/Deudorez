@@ -29,6 +29,9 @@ class _DeuBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final databaseProvider = Provider.of<DatabaseProvider>(context);
+
     return data.isEmpty
         ? const Empty()
         : ListView.builder(
@@ -80,7 +83,10 @@ class _DeuBody extends StatelessWidget {
 
                             IconButton(
                               icon: const Icon(Icons.delete, color: Colors.red,),
-                              onPressed: () {},
+                              onPressed: () {
+                                databaseProvider.deleteClientes(data2['id']);
+                                
+                              },
                               
                             ),
                             IconButton(
