@@ -12,7 +12,7 @@ class CompraMercancia extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Background(),
+          const Background(),
           _CompraBody(
             data: provider.cm,
           )
@@ -25,7 +25,7 @@ class CompraMercancia extends StatelessWidget {
 class _CompraBody extends StatelessWidget {
   final List data;
 
-  const _CompraBody({super.key, required this.data});
+  const _CompraBody({ required this.data});
 
   @override
   Widget build(BuildContext context) {

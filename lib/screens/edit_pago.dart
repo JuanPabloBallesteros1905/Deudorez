@@ -11,7 +11,7 @@ class AddPago extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [Background(), _Body()],
+        children: [const Background(), _Body()],
       ),
     );
   }
@@ -25,7 +25,7 @@ class _Body extends StatelessWidget {
 
     final text = TextEditingController();
 
-    //* TODO: mejorar la funcion de pagos
+ 
     String pago() {
       final deuda = double.parse(arguments['price']);
       final pago = double.parse(text.text);

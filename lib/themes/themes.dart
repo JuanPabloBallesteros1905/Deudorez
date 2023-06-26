@@ -9,7 +9,7 @@ class Themes {
        
         minimumSize: const Size(90, 50),
         shape: const StadiumBorder(),
-        side: BorderSide(width: 1)
+        side: const BorderSide(width: 1)
         
 
       )

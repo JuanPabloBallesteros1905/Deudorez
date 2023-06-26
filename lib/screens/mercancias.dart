@@ -13,7 +13,7 @@ class Mercancia extends StatelessWidget {
     return Scaffold(
         body: Stack(
       children: [
-        Background(),
+        const Background(),
         MercanciaBody(
           mD: providerDatabase.md,
         )

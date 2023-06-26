@@ -13,7 +13,7 @@ class GenteDebe extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Background(),
+          const Background(),
           _DeuBody(
             data: databaseProvider.deuData,
           )
@@ -24,7 +24,7 @@ class GenteDebe extends StatelessWidget {
 }
 
 class _DeuBody extends StatelessWidget {
-  const _DeuBody({super.key, required this.data});
+  const _DeuBody({ required this.data});
   final List data;
 
   @override

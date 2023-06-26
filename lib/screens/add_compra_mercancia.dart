@@ -10,11 +10,12 @@ class AddCompraMercancias extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-      children: [Background(), _BodyForm()],
+      children: [const Background(), _BodyForm()],
     ));
   }
 }
 
+// ignore: must_be_immutable
 class _BodyForm extends StatelessWidget {
   final _productController = TextEditingController();
   final _cantidadController = TextEditingController();

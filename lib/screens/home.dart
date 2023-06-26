@@ -6,7 +6,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         children: [Background(), BodyApp()],
       ),
@@ -15,6 +15,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class BodyApp extends StatelessWidget {
+  const BodyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -58,10 +60,7 @@ class _SingleTable extends StatelessWidget {
   final String routeAdd;
 
   const _SingleTable(
-      {super.key,
-      required this.text,
-      required this.route,
-      required this.routeAdd});
+      {required this.text, required this.route, required this.routeAdd});
 
   @override
   Widget build(BuildContext context) {

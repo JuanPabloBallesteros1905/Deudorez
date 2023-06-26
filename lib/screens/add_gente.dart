@@ -5,17 +5,23 @@ import 'package:provider/provider.dart';
 import '../widgets/widgets.dart';
 
 class AddGente extends StatelessWidget {
+  const AddGente({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [Background(), _BodyForm()],
+        children: [const Background(), _BodyFormClientes()],
       ),
     );
   }
 }
 
-class _BodyForm extends StatelessWidget {
+
+
+// ignore: must_be_immutable
+class _BodyFormClientes extends StatelessWidget {
+
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
   final _deudaController = TextEditingController();
