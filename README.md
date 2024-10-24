@@ -12,4 +12,4 @@
 ![WhatsApp Image 2024-10-23 at 8 55 40 PM (1)](https://github.com/user-attachments/assets/ac89d0f0-b26c-49c8-8788-880571171620)
 
 
-## Deudoors cuenta con base de datos en la nuba y notificaciones push mediante Firebase
+## Deudoors cuenta con base de datos en la nube y notificaciones push mediante Firebase
